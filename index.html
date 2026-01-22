@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Study Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Smart Study Planner</h1>
+      <p>Plan subjects, track tasks, and stay consistent.</p>
+    </header>
+
+    <section class="stats">
+      <div class="card">
+        <span>Total Tasks</span>
+        <strong id="total-tasks">0</strong>
+      </div>
+      <div class="card">
+        <span>Completed</span>
+        <strong id="completed-tasks">0</strong>
+      </div>
+      <div class="card">
+        <span>Completion</span>
+        <strong id="completion-rate">0%</strong>
+      </div>
+      <div class="card">
+        <span>Today Focus</span>
+        <strong id="today-subject">—</strong>
+      </div>
+    </section>
+
+    <section class="planner">
+      <form id="task-form">
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="e.g. DBMS" required />
+        </div>
+        <div class="field">
+          <label for="topic">Topic / Task</label>
+          <input type="text" id="topic" placeholder="e.g. Solve 10 numericals" required />
+        </div>
+        <div class="field inline">
+          <div>
+            <label for="date">Planned Date</label>
+            <input type="date" id="date" required />
+          </div>
+          <div>
+            <label for="priority">Priority</label>
+            <select id="priority">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="primary-btn">Add Task</button>
+      </form>
+
+      <div class="filters">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="today">Today</button>
+        <button data-filter="pending">Pending</button>
+        <button data-filter="completed">Completed</button>
+      </div>
+
+      <ul id="task-list"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
